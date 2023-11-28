@@ -52,10 +52,10 @@ public class Costumer {
     @JoinColumn(name = "rentalId", nullable = false)
     private Rental rental;
 
-    @OneToMany( mappedBy = "costumer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "costumer", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Reservation> reservationSet = new HashSet<>();
 
-    @OneToMany( mappedBy = "costumer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "costumer", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Review> reviewSet = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER)

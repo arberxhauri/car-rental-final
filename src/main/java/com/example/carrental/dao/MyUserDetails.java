@@ -17,6 +17,7 @@ import java.util.Set;
 public class MyUserDetails implements UserDetails {
 
     private Costumer costumer;
+
     @Transactional
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -24,7 +25,7 @@ public class MyUserDetails implements UserDetails {
 
         List<SimpleGrantedAuthority> simpleGrantedAuthorityList = new ArrayList<>();
 
-        for (Role role : roleSet){
+        for (Role role : roleSet) {
             simpleGrantedAuthorityList.add(new SimpleGrantedAuthority(role.getRole()));
         }
 

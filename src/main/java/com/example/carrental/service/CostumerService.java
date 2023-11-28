@@ -20,7 +20,7 @@ public class CostumerService {
     private CostumerMapper costumerMapper;
     private RentalRepository rentalRepository;
 
-    public CostumerDto save(CostumerDto costumerDto){
+    public CostumerDto save(CostumerDto costumerDto) {
         Rental existingRental = rentalRepository.findById(costumerDto.getRentalId()).orElseThrow(() ->
                 new RuntimeException("Rental with id " + costumerDto.getRentalId() + " was not found!"));
 
@@ -32,20 +32,20 @@ public class CostumerService {
         return costumerMapper.mapToDto(savedCostumer);
     }
 
-    public List<CostumerDto> findAll(){
+    public List<CostumerDto> findAll() {
         List<Costumer> costumers = costumerRepository.findAll();
 
         return costumers.stream().map(costumer -> costumerMapper.mapToDto(costumer)).collect(Collectors.toList());
     }
 
-    public CostumerDto findById(long costumerId){
+    public CostumerDto findById(long costumerId) {
         Costumer existingCostumer = costumerRepository.findById(costumerId).orElseThrow(() ->
                 new RuntimeException("Costumer with id " + costumerId + " was not found!"));
 
         return costumerMapper.mapToDto(existingCostumer);
     }
 
-    public CostumerDto update(CostumerDto costumerDto, long costumerId){
+    public CostumerDto update(CostumerDto costumerDto, long costumerId) {
         Costumer existingCostumer = costumerRepository.findById(costumerId).orElseThrow(() ->
                 new RuntimeException("Costumer with id " + costumerId + " was not found!"));
 
@@ -61,11 +61,11 @@ public class CostumerService {
         return costumerMapper.mapToDto(savedCostumer);
     }
 
-    public String delete(long costumerId){
+    public String delete(long costumerId) {
         Costumer existingCostumer = costumerRepository.findById(costumerId).orElseThrow(() ->
                 new RuntimeException("Costumer with id " + costumerId + " was not found!"));
         costumerRepository.delete(existingCostumer);
 
-        return "Costumer with id: "+ costumerId + " was deleted successfully";
+        return "Costumer with id: " + costumerId + " was deleted successfully";
     }
 }

@@ -12,7 +12,7 @@ public class CostumerMapper {
 
     private RentalMapper rentalMapper;
 
-    public Costumer mapToEntity(CostumerDto costumerDto){
+    public Costumer mapToEntity(CostumerDto costumerDto) {
         Costumer costumer = new Costumer();
         costumer.setId(costumerDto.getId());
         costumer.setEmail(costumerDto.getEmail());
@@ -27,7 +27,7 @@ public class CostumerMapper {
         return costumer;
     }
 
-    public CostumerDto mapToDto(Costumer costumer){
+    public CostumerDto mapToDto(Costumer costumer) {
         CostumerDto costumerDto = new CostumerDto();
         costumerDto.setId(costumer.getId());
         costumerDto.setEmail(costumer.getEmail());

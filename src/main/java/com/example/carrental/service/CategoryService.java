@@ -52,7 +52,7 @@ public class CategoryService {
 
     public void deleteById(long categoryId) {
         Category foundCategory = categoryRepository.findById(categoryId).orElseThrow(
-                ()-> new RuntimeException("Category with id: " + categoryId + " was not found"));
+                () -> new RuntimeException("Category with id: " + categoryId + " was not found"));
         categoryRepository.delete(foundCategory);
     }
 

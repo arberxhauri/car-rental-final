@@ -19,12 +19,12 @@ public class BillController {
     private BillService billService;
 
     @GetMapping("/list")
-    public List<BillDto> findAll(){
+    public List<BillDto> findAll() {
         return billService.findAll();
     }
 
     @GetMapping("/total")
-    public double total(){
+    public double total() {
         return billService.totalAmount();
     }
 }

@@ -44,7 +44,7 @@ public class EmployeeService {
         return employeeMapper.mapToDto(existingEmployee);
     }
 
-    public EmployeeDto update(EmployeeDto employeeDto, long employeeId){
+    public EmployeeDto update(EmployeeDto employeeDto, long employeeId) {
         Employee existingEmployee = employeeRepository.findById(employeeId).orElseThrow(() ->
                 new RuntimeException("Employee with id " + employeeId + " was not found!"));
 
@@ -59,13 +59,13 @@ public class EmployeeService {
         return employeeMapper.mapToDto(savedEmployee);
     }
 
-    public String delete(long employeeId){
+    public String delete(long employeeId) {
         Employee existingEmployee = employeeRepository.findById(employeeId).orElseThrow(() ->
                 new RuntimeException("Employee with id " + employeeId + " was not found!"));
 
         employeeRepository.delete(existingEmployee);
 
-        return "Employee with id " + employeeId +  " was deleted successfully";
+        return "Employee with id " + employeeId + " was deleted successfully";
     }
 
 }

@@ -12,7 +12,7 @@ public class BranchMapper {
 
     private RentalMapper rentalMapper;
 
-    public Branch mapToEntity(BranchDto branchDto){
+    public Branch mapToEntity(BranchDto branchDto) {
         Branch branch = new Branch();
         branch.setId(branchDto.getId());
         branch.setCity(branchDto.getCity());
@@ -20,7 +20,7 @@ public class BranchMapper {
         return branch;
     }
 
-    public BranchDto mapToDto(Branch branch){
+    public BranchDto mapToDto(Branch branch) {
         BranchDto branchDto = new BranchDto();
         branchDto.setId(branch.getId());
         branchDto.setCity(branch.getCity());

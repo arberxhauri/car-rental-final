@@ -23,7 +23,7 @@ public class ReviewService {
     private CarRepository carRepository;
     private CostumerRepository costumerRepository;
 
-    public ReviewDto save(ReviewDto reviewDto){
+    public ReviewDto save(ReviewDto reviewDto) {
         Car existingCar = carRepository.findById(reviewDto.getCarId()).orElseThrow(() ->
                 new RuntimeException("Car not found!"));
         Costumer existingCostumer = costumerRepository.findById(reviewDto.getCostumerId()).orElseThrow(() ->
@@ -36,20 +36,20 @@ public class ReviewService {
         return reviewMapper.mapToDto(savedReview);
     }
 
-    public List<ReviewDto> findAll(){
+    public List<ReviewDto> findAll() {
         List<Review> reviewList = reviewRepository.findAll();
 
         return reviewList.stream().map(review -> reviewMapper.mapToDto(review)).collect(Collectors.toList());
     }
 
-    public ReviewDto findById(long reviewId){
+    public ReviewDto findById(long reviewId) {
         Review existingReview = reviewRepository.findById(reviewId).orElseThrow(() ->
                 new RuntimeException("Review with id " + reviewId + " was not found!"));
 
         return reviewMapper.mapToDto(existingReview);
     }
 
-    public List<ReviewDto> findByCarId(long carId){
+    public List<ReviewDto> findByCarId(long carId) {
         Car existingCar = carRepository.findById(carId).orElseThrow(() ->
                 new RuntimeException("Car with id " + carId + " was not found!"));
 
@@ -58,7 +58,7 @@ public class ReviewService {
         return existingReviews.stream().map(review -> reviewMapper.mapToDto(review)).collect(Collectors.toList());
     }
 
-    public List<ReviewDto> findByCostumerId(long costumerId){
+    public List<ReviewDto> findByCostumerId(long costumerId) {
         Costumer existingCostumer = costumerRepository.findById(costumerId).orElseThrow(() ->
                 new RuntimeException("Costumer with id " + costumerId + " was not found!"));
 
@@ -67,7 +67,7 @@ public class ReviewService {
         return existingReviews.stream().map(review -> reviewMapper.mapToDto(review)).collect(Collectors.toList());
     }
 
-    public List<ReviewDto> findByCarIdAndCostumerId(long carId, long costumerId){
+    public List<ReviewDto> findByCarIdAndCostumerId(long carId, long costumerId) {
         Car existingCar = carRepository.findById(carId).orElseThrow(() ->
                 new RuntimeException("Car with id " + carId + " was not found!"));
 
@@ -79,7 +79,7 @@ public class ReviewService {
         return reviewList.stream().map(review -> reviewMapper.mapToDto(review)).collect(Collectors.toList());
     }
 
-    public String delete(long reviewId){
+    public String delete(long reviewId) {
         Review existingReview = reviewRepository.findById(reviewId).orElseThrow(() ->
                 new RuntimeException("Review with id " + reviewId + " was not found!"));
 

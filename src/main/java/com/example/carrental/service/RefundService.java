@@ -26,7 +26,7 @@ public class RefundService {
     private ReservationMapper reservationMapper;
     private EmployeeRepository employeeRepository;
 
-    public RefundDto cancelReservation(RefundDto refundDto){
+    public RefundDto cancelReservation(RefundDto refundDto) {
         Reservation existingReservation = reservationRepository.findById(refundDto.getReservationId()).orElseThrow(() ->
                 new RuntimeException("Reservation with id " + refundDto.getReservationId() + " was not found!"));
         Employee existingEmployee = employeeRepository.findById(refundDto.getEmployeeId()).orElseThrow(() ->
@@ -42,7 +42,7 @@ public class RefundService {
         return refundMapper.mapToDto(savedRefund);
     }
 
-    public RefundDto carNotAvailable(RefundDto refundDto){
+    public RefundDto carNotAvailable(RefundDto refundDto) {
         Reservation existingReservation = reservationRepository.findById(refundDto.getReservationId()).orElseThrow(() ->
                 new RuntimeException("Reservation with id " + refundDto.getReservationId() + " was not found!"));
         Employee existingEmployee = employeeRepository.findById(refundDto.getEmployeeId()).orElseThrow(() ->
@@ -64,7 +64,7 @@ public class RefundService {
             refund.setSurcharge(reservation.getAmount() - (reservation.getAmount() * 0.2));
             reservation.setAmount(reservation.getAmount() - refund.getSurcharge());
             reservationService.updateReservation(reservation.getReservation_id(), reservationMapper.mapToDto(reservation));
-        }else {
+        } else {
             refund.setSurcharge(0);
         }
         return 0;

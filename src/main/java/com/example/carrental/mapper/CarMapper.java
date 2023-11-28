@@ -12,7 +12,7 @@ public class CarMapper {
     private CategoryMapper categoryMapper;
     private BranchMapper branchMapper;
 
-    public Car mapToEntity(CarDto carDto){
+    public Car mapToEntity(CarDto carDto) {
         Car car = new Car();
         car.setId(carDto.getId());
         car.setBrand(carDto.getBrand());
@@ -26,7 +26,7 @@ public class CarMapper {
         return car;
     }
 
-    public CarDto mapToDto(Car car){
+    public CarDto mapToDto(Car car) {
         CarDto carDto = new CarDto();
         carDto.setId(car.getId());
         carDto.setBrand(car.getBrand());

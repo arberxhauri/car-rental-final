@@ -15,8 +15,8 @@ public class ReservationMapper {
     private CostumerMapper costumerMapper;
 
 
-    public Reservation mapToEntity(ReservationDto reservationDto){
-        Reservation reservation  =new Reservation();
+    public Reservation mapToEntity(ReservationDto reservationDto) {
+        Reservation reservation = new Reservation();
         reservation.setReservation_id(reservationDto.getReservation_id());
         reservation.setDateOfBooking(reservationDto.getDateOfBooking());
         reservation.setDepartureDate(reservationDto.getDepartureDate());
@@ -28,7 +28,7 @@ public class ReservationMapper {
 
     }
 
-    public ReservationDto mapToDto(Reservation reservation){
+    public ReservationDto mapToDto(Reservation reservation) {
         ReservationDto reservationDto = new ReservationDto();
         reservationDto.setReservation_id(reservation.getReservation_id());
         reservationDto.setDateOfBooking(reservation.getDateOfBooking());

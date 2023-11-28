@@ -11,7 +11,7 @@ public class EmployeeMapper {
 
     private BranchMapper branchMapper;
 
-    public Employee mapToEntity(EmployeeDto employeeDto){
+    public Employee mapToEntity(EmployeeDto employeeDto) {
         Employee employee = new Employee();
         employee.setId(employeeDto.getId());
         employee.setName(employeeDto.getName());
@@ -21,7 +21,7 @@ public class EmployeeMapper {
         return employee;
     }
 
-    public EmployeeDto mapToDto(Employee employee){
+    public EmployeeDto mapToDto(Employee employee) {
         EmployeeDto employeeDto = new EmployeeDto();
         employeeDto.setId(employee.getId());
         employeeDto.setName(employee.getName());

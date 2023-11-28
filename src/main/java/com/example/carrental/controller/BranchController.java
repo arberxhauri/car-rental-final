@@ -16,22 +16,22 @@ public class BranchController {
     private BranchService branchService;
 
     @PostMapping("/save")
-    public BranchDto save(@RequestBody BranchDto branchDto){
+    public BranchDto save(@RequestBody BranchDto branchDto) {
         return branchService.save(branchDto);
     }
 
     @GetMapping("/list")
-    public List<BranchDto> findAll(){
+    public List<BranchDto> findAll() {
         return branchService.findAll();
     }
 
     @GetMapping("/{branchId}")
-    public BranchDto findById(@PathVariable(name = "branchId") long branchId){
+    public BranchDto findById(@PathVariable(name = "branchId") long branchId) {
         return branchService.findById(branchId);
     }
 
     @PutMapping("/update/{branchId}")
-    public BranchDto update(@RequestBody BranchDto branchDto, @PathVariable(name = "branchId") long branchId){
+    public BranchDto update(@RequestBody BranchDto branchDto, @PathVariable(name = "branchId") long branchId) {
         return branchService.update(branchDto, branchId);
     }
 }

@@ -13,7 +13,7 @@ public class BillMapper {
     private ReservationMapper reservationMapper;
     private RefundMapper refundMapper;
 
-    public Bill mapToEntity(BillDto billDto){
+    public Bill mapToEntity(BillDto billDto) {
         Bill bill = new Bill();
         bill.setId(billDto.getId());
         bill.setAmount(billDto.getAmount());
@@ -21,7 +21,7 @@ public class BillMapper {
         return bill;
     }
 
-    public BillDto mapToDto(Bill bill){
+    public BillDto mapToDto(Bill bill) {
         BillDto billDto = new BillDto();
         billDto.setId(bill.getId());
         billDto.setReservationId(bill.getReservation().getReservation_id());

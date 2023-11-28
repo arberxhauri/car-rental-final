@@ -16,12 +16,12 @@ public class RefundController {
     private RefundService refundService;
 
     @PostMapping("/cancelRes")
-    public RefundDto cancelReservation(@RequestBody RefundDto refundDto){
-        return  refundService.cancelReservation(refundDto);
+    public RefundDto cancelReservation(@RequestBody RefundDto refundDto) {
+        return refundService.cancelReservation(refundDto);
     }
 
     @PostMapping("/notAvailable")
-    public RefundDto carNotAvailable(@RequestBody RefundDto refundDto){
-        return  refundService.carNotAvailable(refundDto);
+    public RefundDto carNotAvailable(@RequestBody RefundDto refundDto) {
+        return refundService.carNotAvailable(refundDto);
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class RentalMapper {
 
-    public Rental mapToEntity(RentalDto rentalDto){
+    public Rental mapToEntity(RentalDto rentalDto) {
         Rental rental = new Rental();
 
         rental.setId(rentalDto.getId());
@@ -20,7 +20,7 @@ public class RentalMapper {
         return rental;
     }
 
-    public RentalDto mapToDto(Rental rental){
+    public RentalDto mapToDto(Rental rental) {
         RentalDto rentalDto = new RentalDto();
 
         rentalDto.setId(rental.getId());

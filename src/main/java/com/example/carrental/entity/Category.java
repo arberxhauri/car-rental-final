@@ -24,10 +24,8 @@ public class Category {
 
     private int peopleLoad;
 
-    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Car> cars;
-
-
 
 
 }

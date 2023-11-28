@@ -12,7 +12,7 @@ public class ReviewMapper {
     private CarMapper carMapper;
     private CostumerMapper costumerMapper;
 
-    public Review mapToEntity(ReviewDto reviewDto){
+    public Review mapToEntity(ReviewDto reviewDto) {
         Review review = new Review();
         review.setId(reviewDto.getId());
         review.setDescription(reviewDto.getDescription());
@@ -21,7 +21,7 @@ public class ReviewMapper {
         return review;
     }
 
-    public ReviewDto mapToDto(Review review){
+    public ReviewDto mapToDto(Review review) {
         ReviewDto reviewDto = new ReviewDto();
         reviewDto.setId(review.getId());
         reviewDto.setDescription(review.getDescription());

@@ -27,5 +27,5 @@ public class ReviewDto {
 
     private long costumerId;
 
-    private  CostumerDto costumerDto;
+    private CostumerDto costumerDto;
 }

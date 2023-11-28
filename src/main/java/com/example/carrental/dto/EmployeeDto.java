@@ -11,7 +11,7 @@ import lombok.Setter;
 public class EmployeeDto {
     private long id;
 
-    private  String firstName;
+    private String firstName;
 
     private String name;
 

@@ -33,7 +33,7 @@ public class RentalService {
         return rentalMapper.mapToDto(rental);
     }
 
-    public RentalDto update(RentalDto rentalDto, long rentalId){
+    public RentalDto update(RentalDto rentalDto, long rentalId) {
         Rental existingRental = rentalRepository.findById(rentalId).orElseThrow(() ->
                 new RuntimeException("Rental with id " + rentalId + " was not found"));
         existingRental.setId(rentalId);
@@ -46,7 +46,7 @@ public class RentalService {
         return rentalMapper.mapToDto(savedRental);
     }
 
-    public String delete(long rentalId){
+    public String delete(long rentalId) {
         Rental existingRental = rentalRepository.findById(rentalId).orElseThrow(() ->
                 new RuntimeException("Rental with id " + rentalId + " was not found"));
         rentalRepository.delete(existingRental);

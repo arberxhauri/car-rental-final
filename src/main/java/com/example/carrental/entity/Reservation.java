@@ -76,13 +76,13 @@ public class Reservation {
             throw new IllegalArgumentException("'amountPerDay' must be a non-negative value");
         }
     }
-    
-    public double calcAmount(double carAmount){
+
+    public double calcAmount(double carAmount) {
         long diff = ChronoUnit.DAYS.between(departureDate, returnDate) - 1;
         double total = (double) diff * carAmount;
-        if (this.pickUpDepartment.equals(this.returnDepartment)){
+        if (this.pickUpDepartment.equals(this.returnDepartment)) {
             return total;
-        } else{
+        } else {
             return total + (total * 0.1);
         }
     }

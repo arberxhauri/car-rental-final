@@ -19,32 +19,32 @@ public class CostumerController {
     private CostumerService costumerService;
 
     @PostMapping("/save")
-    public CostumerDto save(@RequestBody CostumerDto costumerDto){
+    public CostumerDto save(@RequestBody CostumerDto costumerDto) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         costumerDto.setPassword(passwordEncoder.encode(costumerDto.getPassword()));
         return costumerService.save(costumerDto);
     }
 
     @GetMapping("/list")
-    public List<CostumerDto> findAll(){
+    public List<CostumerDto> findAll() {
         return costumerService.findAll();
     }
 
     @GetMapping("/{costumerId}")
-    public CostumerDto findById(@PathVariable(name = "costumerId") long costumerId){
+    public CostumerDto findById(@PathVariable(name = "costumerId") long costumerId) {
         return costumerService.findById(costumerId);
     }
 
     @PutMapping("/{costumerId}")
     public CostumerDto update(@RequestBody CostumerDto costumerDto,
-                              @PathVariable(name = "costumerId") long costumerId){
+                              @PathVariable(name = "costumerId") long costumerId) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         costumerDto.setPassword(passwordEncoder.encode(costumerDto.getPassword()));
         return costumerService.update(costumerDto, costumerId);
     }
 
     @DeleteMapping("{costumerId}")
-    public String delete(@PathVariable(name = "costumerId") long costumerId){
+    public String delete(@PathVariable(name = "costumerId") long costumerId) {
         return costumerService.delete(costumerId);
     }
 }

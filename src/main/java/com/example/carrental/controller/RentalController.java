@@ -16,27 +16,27 @@ public class RentalController {
     private RentalService rentalService;
 
     @PostMapping("save")
-    public RentalDto save(@RequestBody RentalDto rentalDto){
+    public RentalDto save(@RequestBody RentalDto rentalDto) {
         return rentalService.save(rentalDto);
     }
 
     @GetMapping("list")
-    public List<RentalDto> findAll(){
+    public List<RentalDto> findAll() {
         return rentalService.findAll();
     }
 
     @GetMapping("{rentalId}")
-    public RentalDto findById(@PathVariable(name = "rentalId") long rentalId){
+    public RentalDto findById(@PathVariable(name = "rentalId") long rentalId) {
         return rentalService.findById(rentalId);
     }
 
     @PutMapping("{rentalId}")
-    public RentalDto update(@RequestBody RentalDto rentalDto, @PathVariable(name = "rentalId") long rentalId){
-        return  rentalService.update(rentalDto, rentalId);
+    public RentalDto update(@RequestBody RentalDto rentalDto, @PathVariable(name = "rentalId") long rentalId) {
+        return rentalService.update(rentalDto, rentalId);
     }
 
     @DeleteMapping("{rentalId}")
-    public String delete(@PathVariable(name = "rentalId") long rentalId){
+    public String delete(@PathVariable(name = "rentalId") long rentalId) {
         return rentalService.delete(rentalId);
     }
 }

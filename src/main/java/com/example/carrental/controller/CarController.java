@@ -17,33 +17,33 @@ public class CarController {
     private CarService carService;
 
     @PostMapping("/save")
-    public CarDto save(@Valid @RequestBody CarDto carDto){
+    public CarDto save(@Valid @RequestBody CarDto carDto) {
         return carService.save(carDto);
     }
 
     @GetMapping("/list")
-    public List<CarDto> findAll(){
+    public List<CarDto> findAll() {
         return carService.findAll();
     }
 
     @GetMapping("/{id}")
-    public CarDto findById(@PathVariable long id){
+    public CarDto findById(@PathVariable long id) {
         return carService.findById(id);
     }
 
     @GetMapping("/findByCategory/{categoryId}")
-    public List<CarDto> findByCategoryId(@PathVariable(name = "categoryId") long categoryId){
+    public List<CarDto> findByCategoryId(@PathVariable(name = "categoryId") long categoryId) {
         return carService.findByCategoryId(categoryId);
     }
 
     @PutMapping("/update/{carId}")
     public CarDto updateCar(@RequestBody CarDto carDto,
-                            @PathVariable(name = "carId") long carId){
+                            @PathVariable(name = "carId") long carId) {
         return carService.updateCar(carDto, carId);
     }
 
     @DeleteMapping("/delete/{carId}")
-    public  String delete(@PathVariable(name = "carId") long carId){
+    public String delete(@PathVariable(name = "carId") long carId) {
         return carService.deleteCar(carId);
     }
 }
